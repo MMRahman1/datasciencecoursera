@@ -1,0 +1,57 @@
+# Site settings
+title: "Gabriele I. Langellotto"
+author: "Mr. G.I. Langellotto"
+email: "gilangellotto@gmail.com"
+description: "AI Solution Architect | HP Lecturer | Automation Innovation & Business Strategy Expert - Transforming complex tech challenges into measurable business wins"
+url: "https://mmrahman1.github.io/datasciencecoursera"
+baseurl: "/datasciencecoursera"
+# Social media
+github_username: GIL794
+linkedin_username: gabriele-iacopo-langellotto-aa7095a9
+# Theme
+remote_theme: daviddarnes/alembic@main
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-coffeescript
+  - jekyll-commonmark-ghpages
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-heading
+  - jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-feed
+# Navigation
+navigation_header:
+  - title: Home
+    url: /
+  - title: Blog
+    url: /blog/
+  - title: About
+    url: /about/
+  - title: Services
+    url: /services/
+  - title: Projects
+    url: /projects/
+  - title: Community
+    url: /community/
+  - title: Contact
+    url: /contact/
+  - title: Business Card
+    url: /card/
+# Pagination
+paginate: 5
+paginate_path: "/blog/page:num/"
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+  pages:
+    output: true
+    permalink: /:title/

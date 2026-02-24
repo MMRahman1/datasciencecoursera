@@ -1,0 +1,49 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header__content">
+      <!-- Logo with SVG initials 'GIL' -->
+      <div class="header__logo">
+        <a class="logo-link" href="{{ '/' | relative_url }}">
+          <svg class="logo-svg" width="60" height="40" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="20" r="19.5" fill="white" stroke="#f97316" stroke-width="1"/>
+            <text x="16" y="27" text-anchor="middle" fill="#f97316" font-family="Georgia, serif" font-size="14" font-weight="bold">G</text>
+            <text x="30" y="31" text-anchor="middle" fill="#f97316" font-family="Georgia, serif" font-size="30" font-weight="bold">I</text>
+            <text x="44" y="27" text-anchor="middle" fill="#f97316" font-family="Georgia, serif" font-size="14" font-weight="bold">L</text>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Site branding -->
+      <div class="header__brand">
+        {% if site.logo %}
+          <a class="header__title" href="{{ '/' | relative_url }}">
+            {% include site-logo.html %}
+          </a>
+        {% endif %}
+        <a class="header__title" href="{{ '/' | relative_url }}">
+          {{ site.title | default: "Gabriele Iacopo Langellotto" }}
+        </a>
+      </div>
+
+      <!-- Single Navigation Menu -->
+      {% if site.navigation_header %}
+        <nav class="nav nav--main" aria-label="Main navigation">
+          <ul>
+            {% for item in site.navigation_header %}
+              {% if item.url contains '://' %}
+                {% assign url = item.url %}
+              {% else %}
+                {% assign url = item.url | relative_url %}
+              {% endif %}
+              <li>
+                <a class="{% if item.url == page.url or (item.url == '/' and page.url == '/index.html') %}active{% endif %}" href="{{ url }}">
+                  {{ item.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
+    </div>
+  </div>
+</header>
